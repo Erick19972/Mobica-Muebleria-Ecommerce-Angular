@@ -1,0 +1,245 @@
+<section class="category-page">
+
+  <!-- HERO -->
+  <div class="category-hero">
+
+    <img [src]="banner()" [alt]="category()" class="hero-image">
+
+    <div class="hero-overlay">
+
+      <div class="hero-box">
+
+        <h1>
+          {{ category().replace('-', ' ').toUpperCase() }}
+        </h1>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CONTENT -->
+  <div class="category-content">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- COLOR -->
+      <div class="filter-block">
+
+        <h3>COLOR</h3>
+
+        <ul>
+
+          <li (click)="filterColor('Blanco')">
+            1. Blanco
+          </li>
+
+          <li (click)="filterColor('Gris')">
+            2. Gris
+          </li>
+
+          <li (click)="filterColor('Café')">
+            3. Café
+          </li>
+
+          <li (click)="filterColor('Azul')">
+            4. Azul
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- MATERIALES -->
+      <div class="filter-block">
+
+        <h3>MATERIALES</h3>
+
+        <ul>
+
+          <li (click)="filterMaterial('Tela')">
+            1. Tela
+          </li>
+
+          <li (click)="filterMaterial('Madera')">
+            2. Madera
+          </li>
+
+          <li (click)="filterMaterial('Metal')">
+            3. Metal
+          </li>
+
+          <li (click)="filterMaterial('Cristal')">
+            4. Cristal
+          </li>
+
+          <li (click)="filterMaterial('Piel')">
+            5. Piel
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- TAMAÑO -->
+      <div class="filter-block">
+
+        <h3>TAMAÑO</h3>
+
+        <div class="sizes">
+
+          <button (click)="filterSize('Individual')">
+            Individual
+          </button>
+
+          <button (click)="filterSize('Matrimonial')">
+            Matrimonial
+          </button>
+
+          <button (click)="filterSize('Queen Size')">
+            Queen Size
+          </button>
+
+          <button (click)="filterSize('King Size')">
+            King Size
+          </button>
+
+        </div>
+
+      </div>
+      <!-- PRECIO -->
+      <div class="filter-block">
+
+        <h3>PRECIO</h3>
+
+        <ul>
+
+          <li (click)="filterPrice('1')">
+            $0.00 - $2,999.99
+          </li>
+
+          <li (click)="filterPrice('2')">
+            $3,000.00 - $5,999.99
+          </li>
+
+          <li (click)="filterPrice('3')">
+            $6,000.00 - $8,999.99
+          </li>
+
+          <li (click)="filterPrice('4')">
+            $9,000.00 - $11,999.99
+          </li>
+
+          <li (click)="filterPrice('5')">
+            $12,000.00 y superior
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- COMPARAR -->
+      <div class="filter-block">
+
+        <h3>COMPARAR PRODUCTOS</h3>
+
+        <p>
+          No tiene ningún artículo para comparar.
+        </p>
+
+      </div>
+
+      <!-- FAVORITOS -->
+      <div class="filter-block">
+
+        <h3>MIS FAVORITOS</h3>
+
+        <p>
+          No tienes Artículos agregados en tu lista de Favoritos.
+        </p>
+
+      </div>
+
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <div class="products-section">
+
+      <!-- TOP BAR -->
+      <div class="top-bar">
+
+        <div class="sort">
+
+          <span>Ordenar por</span>
+
+          <select>
+            <option>Precio - Menor a mayor</option>
+            <option>Precio - Mayor a menor</option>
+            <option>Más vendidos</option>
+            <option>Más recientes</option>
+          </select>
+
+        </div>
+
+        <div class="results">
+          {{ products().length }} ARTÍCULOS
+        </div>
+
+      </div>
+
+      <!-- PRODUCTS -->
+      <div class="products-grid">
+
+        <div class="product-card" *ngFor="let product of products()">
+
+          <!-- IMAGE -->
+          <div class="image-container">
+
+            <img [src]="product.image" [alt]="product.title">
+
+          </div>
+
+          <!-- INFO -->
+          <!-- INFO -->
+          <div class="product-info">
+
+            <h3>
+              {{ product.title }}
+            </h3>
+
+            <p class="description">
+              {{ product.description }}
+            </p>
+
+            <div class="price">
+              $ {{ product.price }}
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="actions">
+
+
+              <!-- AGREGAR AL CARRITO -->
+              <button class="cart-btn" (click)="addToCart(product)">
+                Añadir al carrito
+              </button>
+
+              <!-- COMPRAR AHORA -->
+              <button class="buy-btn" [routerLink]="['/checkout']" [queryParams]="{ productId: product.id }">
+                Comprar ahora
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

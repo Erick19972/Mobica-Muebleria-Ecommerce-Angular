@@ -1,0 +1,311 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* 🔥 RESET GLOBAL */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+.top-bar {
+
+  width: 100vw;
+
+  background: black;
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  padding: 5px 0;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  color: white;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(6px);
+
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* =========================
+   MAIN
+========================= */
+.header-main {
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  padding: 24px 60px;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+/* =========================
+   SEARCH
+========================= */
+.search-box {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-self: start;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 30px;
+
+  padding: 10px 18px;
+
+  width: 260px;
+
+  background: transparent;
+}
+
+.search-box input {
+
+  background: transparent;
+
+  border: none;
+
+  color: white;
+
+  outline: none;
+
+  width: 100%;
+
+  font-size: 15px;
+}
+
+.search-box input::placeholder {
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-weight: 500;
+}
+
+.search-box i {
+
+  color: white;
+
+  font-size: 18px;
+}
+
+/* =========================
+   LOGO
+========================= */
+/* =========================
+   LOGO
+========================= */
+.logo {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-decoration: none;
+
+  color: white;
+
+  cursor: pointer;
+
+  position: relative;
+
+  z-index: 2000;
+}
+
+.logo h1 {
+
+  margin: 0;
+
+  font-size: 42px;
+
+  font-weight: 400;
+
+  letter-spacing: 9px;
+
+  color: white;
+
+  pointer-events: none;
+}
+
+.logo span {
+
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 15px;
+
+  letter-spacing: 8px;
+
+  color: white;
+
+  opacity: 0.95;
+
+  pointer-events: none;
+}
+
+.logo:hover {
+
+  opacity: 0.9;
+}
+
+/* =========================
+   ICONS
+========================= */
+.icons {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-self: end;
+
+  gap: 18px;
+}
+
+.icons span,
+.cart-icon {
+
+  color: white;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.icons i,
+.cart-icon i {
+
+  font-size: 24px;
+
+  font-weight: 300;
+
+  color: white;
+}
+
+.icons span:hover,
+.cart-icon:hover {
+
+  opacity: 0.7;
+}
+
+/* =========================
+   NAV
+========================= */
+.nav {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 26px;
+
+  padding-bottom: 18px;
+}
+
+.nav a {
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  transition: 0.3s;
+}
+
+.nav a:hover {
+
+  opacity: 0.7;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+.header.light {
+
+  position: relative;
+
+  background: white;
+
+  color: black;
+}
+
+.header.light .search-box {
+
+  border: 1px solid black;
+}
+
+.header.light .search-box input,
+.header.light .search-box i {
+
+  color: black;
+}
+
+.header.light .search-box input::placeholder {
+
+  color: #555;
+}
+
+.header.light .nav a {
+
+  color: black;
+}
+
+.header.light .logo h1,
+.header.light .logo span {
+
+  color: black;
+}
+
+.header.light .icons span,
+.header.light .icons i,
+.header.light .cart-icon,
+.header.light .cart-icon i {
+
+  color: black;
+}
