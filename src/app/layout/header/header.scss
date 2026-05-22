@@ -1,12 +1,20 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
-/* 🔥 RESET GLOBAL */
+/* =========================
+   RESET GLOBAL
+========================= */
 html,
 body {
+
   margin: 0;
+
   padding: 0;
+
   width: 100%;
+
   overflow-x: hidden;
+
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* =========================
@@ -37,6 +45,7 @@ body {
   position: fixed;
 
   top: 0;
+
   left: 0;
 
   width: 100%;
@@ -50,6 +59,8 @@ body {
   backdrop-filter: blur(6px);
 
   -webkit-backdrop-filter: blur(6px);
+
+  transition: 0.3s ease;
 }
 
 /* =========================
@@ -90,6 +101,8 @@ body {
   width: 260px;
 
   background: transparent;
+
+  transition: 0.3s ease;
 }
 
 .search-box input {
@@ -114,16 +127,19 @@ body {
   font-weight: 500;
 }
 
-.search-box i {
+.search-box span {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 
   color: white;
 
   font-size: 18px;
 }
 
-/* =========================
-   LOGO
-========================= */
 /* =========================
    LOGO
 ========================= */
@@ -146,6 +162,8 @@ body {
   position: relative;
 
   z-index: 2000;
+
+  transition: 0.3s ease;
 }
 
 .logo h1 {
@@ -182,7 +200,7 @@ body {
 
 .logo:hover {
 
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 /* =========================
@@ -196,22 +214,31 @@ body {
 
   justify-self: end;
 
-  gap: 18px;
+  gap: 20px;
 }
 
-.icons span,
+/* =========================
+   ICON LINKS
+========================= */
+.icon-link,
 .cart-icon {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 
   color: white;
 
-  cursor: pointer;
-
   text-decoration: none;
 
-  transition: 0.3s;
+  cursor: pointer;
+
+  transition: 0.3s ease;
 }
 
-.icons i,
+.icon-link i,
 .cart-icon i {
 
   font-size: 24px;
@@ -219,12 +246,16 @@ body {
   font-weight: 300;
 
   color: white;
+
+  transition: 0.3s ease;
 }
 
-.icons span:hover,
+.icon-link:hover,
 .cart-icon:hover {
 
   opacity: 0.7;
+
+  transform: translateY(-2px);
 }
 
 /* =========================
@@ -241,6 +272,8 @@ body {
   gap: 26px;
 
   padding-bottom: 18px;
+
+  flex-wrap: wrap;
 }
 
 .nav a {
@@ -255,7 +288,7 @@ body {
 
   letter-spacing: 0.5px;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .nav a:hover {
@@ -273,15 +306,18 @@ body {
   background: white;
 
   color: black;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
+/* SEARCH */
 .header.light .search-box {
 
   border: 1px solid black;
 }
 
 .header.light .search-box input,
-.header.light .search-box i {
+.header.light .search-box span {
 
   color: black;
 }
@@ -291,21 +327,197 @@ body {
   color: #555;
 }
 
+/* NAV */
 .header.light .nav a {
 
   color: black;
 }
 
+/* LOGO */
 .header.light .logo h1,
 .header.light .logo span {
 
   color: black;
 }
 
-.header.light .icons span,
-.header.light .icons i,
-.header.light .cart-icon,
+/* ICONS */
+.header.light .icon-link,
+.header.light .cart-icon {
+
+  color: black;
+}
+
+.header.light .icon-link i,
 .header.light .cart-icon i {
 
   color: black;
+}
+
+
+/* =========================
+   USER TRIGGER
+========================= */
+.user-trigger {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: .3s ease;
+
+}
+
+.user-trigger i {
+
+  font-size: 24px;
+
+  font-weight: 300;
+
+  color: white;
+
+  transition: 0.3s ease;
+
+}
+
+.user-trigger:hover {
+
+  opacity: .7;
+
+  transform: translateY(-2px);
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1200px) {
+
+  .header-main {
+
+    padding: 24px 30px;
+  }
+
+  .nav {
+
+    gap: 18px;
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .header-main {
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .search-box {
+
+    width: 100%;
+
+    max-width: 450px;
+
+    justify-self: center;
+  }
+
+  .icons {
+
+    justify-self: center;
+  }
+
+  .nav {
+
+    padding-inline: 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .logo h1 {
+
+    font-size: 32px;
+
+    letter-spacing: 6px;
+  }
+
+  .logo span {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+  }
+
+  .search-box {
+
+    max-width: 100%;
+  }
+
+  .nav {
+
+    gap: 14px;
+
+    padding: 0 15px 18px;
+  }
+
+  .nav a {
+
+    font-size: 12px;
+  }
+
+  .icon-link i,
+  .cart-icon i {
+
+    font-size: 22px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .header-main {
+
+    padding: 20px 15px;
+  }
+
+  .top-bar {
+
+    font-size: 10px;
+  }
+
+  .logo h1 {
+
+    font-size: 26px;
+
+    letter-spacing: 4px;
+  }
+
+  .logo span {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+  }
+
+  .search-box {
+
+    padding: 8px 14px;
+  }
+
+  .search-box input {
+
+    font-size: 14px;
+  }
+
+  .nav {
+
+    gap: 10px;
+  }
+
 }

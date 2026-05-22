@@ -1,0 +1,130 @@
+<!-- =========================
+   REGISTER SECTION
+========================= -->
+<section class="register-section">
+
+  <div class="register-container">
+
+    <!-- LEFT -->
+    <div class="register-info">
+
+      <span class="tag">
+        Únete a Mōbica
+      </span>
+
+      <h1>
+        Crea tu cuenta y transforma
+        tu hogar con estilo
+      </h1>
+
+      <p>
+        Regístrate para acceder a promociones,
+        favoritos, carrito personalizado
+        y experiencias premium.
+      </p>
+
+      <ul>
+
+        <li>
+          ✔ Acceso a favoritos
+        </li>
+
+        <li>
+          ✔ Compras más rápidas
+        </li>
+
+        <li>
+          ✔ Seguimiento de pedidos
+        </li>
+
+        <li>
+          ✔ Beneficios exclusivos
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="register-card">
+
+      <h2>
+        Crear cuenta
+      </h2>
+
+      <form (ngSubmit)="register()">
+
+        <!-- NAME -->
+        <div class="form-group">
+
+          <label>
+            Nombre completo
+          </label>
+
+          <input
+            type="text"
+            [(ngModel)]="name"
+            name="name"
+            placeholder="Tu nombre" />
+
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group">
+
+          <label>
+            Correo electrónico
+          </label>
+
+          <input
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            placeholder="correo@ejemplo.com" />
+
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+
+          <label>
+            Contraseña
+          </label>
+
+          <input
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            placeholder="********" />
+
+        </div>
+
+        <!-- BUTTON -->
+        <button type="submit">
+
+          Crear cuenta
+
+        </button>
+
+      </form>
+
+      <!-- FOOTER -->
+      <div class="register-footer">
+
+        <span>
+          ¿Ya tienes cuenta?
+        </span>
+
+        <a routerLink="/login">
+
+          Iniciar sesión
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

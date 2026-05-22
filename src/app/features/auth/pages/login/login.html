@@ -1,0 +1,135 @@
+<!-- =========================
+   LOGIN SECTION
+========================= -->
+<section class="login-section">
+
+  <div class="login-container">
+
+    <!-- LEFT -->
+    <div class="login-info">
+
+      <span class="tag">
+        Bienvenido a Mōbica
+      </span>
+
+      <h1>
+        Inicia sesión y descubre
+        una experiencia premium
+      </h1>
+
+      <p>
+        Accede a tus favoritos, pedidos,
+        carrito y promociones exclusivas
+        de muebles y decoración.
+      </p>
+
+      <ul>
+
+        <li>
+          ✔ Seguimiento de pedidos
+        </li>
+
+        <li>
+          ✔ Productos exclusivos
+        </li>
+
+        <li>
+          ✔ Pagos rápidos y seguros
+        </li>
+
+        <li>
+          ✔ Guarda tus favoritos
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="login-card">
+
+      <h2>
+        Iniciar sesión
+      </h2>
+
+      <!-- =========================
+           LOGIN FORM
+      ========================= -->
+      <form (ngSubmit)="login()">
+
+        <!-- EMAIL -->
+        <div class="form-group">
+
+          <label>
+            Correo electrónico
+          </label>
+
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="correo@ejemplo.com">
+
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+
+          <label>
+            Contraseña
+          </label>
+
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            placeholder="********">
+
+        </div>
+
+        <!-- LOGIN BUTTON -->
+        <button type="submit">
+
+          Entrar
+
+        </button>
+
+        <!-- DIVIDER -->
+        <div class="divider">
+
+          <span>
+            o continuar con
+          </span>
+
+        </div>
+
+        <!-- GOOGLE BUTTON -->
+        <div
+          id="google-btn"
+          class="google-btn-container">
+        </div>
+
+      </form>
+
+      <!-- FOOTER -->
+      <div class="login-footer">
+
+        <a href="#">
+          ¿Olvidaste tu contraseña?
+        </a>
+
+        <span>
+          |
+        </span>
+
+        <a routerLink="/register">
+          Crear cuenta
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

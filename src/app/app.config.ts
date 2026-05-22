@@ -1,9 +1,29 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
+import {
+  ApplicationConfig
+} from '@angular/core';
+
+import {
+  provideRouter
+} from '@angular/router';
+
+import {
+  provideHttpClient
+} from '@angular/common/http';
+
+import {
+  routes
+} from './app.routes';
 
 export const appConfig: ApplicationConfig = {
+
   providers: [
-    provideRouter(routes) // 🔥 ESTA LÍNEA ES LA CLAVE
+
+    /* ROUTES */
+    provideRouter(routes),
+
+    /* HTTP CLIENT */
+    provideHttpClient()
+
   ]
+
 };

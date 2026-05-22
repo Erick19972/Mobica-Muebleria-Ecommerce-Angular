@@ -1,62 +1,153 @@
-import { Routes } from '@angular/router';
+import {
+  Routes
+} from '@angular/router';
 
-import { Home } from './features/home/pages/home/home';
+/* =========================
+   PAGES
+========================= */
+import {
+  Home
+} from './features/home/pages/home/home';
 
-import { ProductListComponent } from './features/products/pages/product-list/product-list';
+import {
+  ProductListComponent
+} from './features/products/pages/product-list/product-list';
 
-import { ProductDetailComponent } from './features/products/pages/product-detail/product-detail';
+import {
+  ProductDetailComponent
+} from './features/products/pages/product-detail/product-detail';
 
-import { Cart } from './features/cart/pages/cart/cart';
+import {
+  Cart
+} from './features/cart/pages/cart/cart';
 
-import { Checkout } from './features/checkout/pages/checkout/checkout';
+import {
+  Checkout
+} from './features/checkout/pages/checkout/checkout';
 
-import { Favorites } from './features/favorites/pages/favorites/favorites';
+import {
+  Favorites
+} from './features/favorites/pages/favorites/favorites';
+
+import {
+  Register
+} from './features/auth/pages/register/register';
+
+/* =========================
+   AUTH
+========================= */
+import {
+  Login
+} from './features/auth/pages/login/login';
+
+/* =========================
+   STORES
+========================= */
+import {
+  Stores
+} from './features/stores/pages/stores/stores';
+
+/* =========================
+   GUARD
+========================= */
+import {
+  authGuard
+} from './core/guards/auth-guard';
 
 export const routes: Routes = [
 
-  /* HOME */
+  /* =========================
+     HOME
+  ========================= */
   {
     path: '',
     component: Home
   },
 
-  /* LISTADO GENERAL */
+  /* =========================
+     LOGIN
+  ========================= */
+  {
+    path: 'login',
+    component: Login
+  },
+
+
+  {
+    path: 'register',
+    component: Register
+  },
+
+
+  /* =========================
+     STORES
+  ========================= */
+  {
+    path: 'tiendas',
+    component: Stores
+  },
+
+  /* =========================
+     PRODUCTS
+  ========================= */
   {
     path: 'products',
     component: ProductListComponent
   },
 
-  /* 🔥 CATEGORÍAS DINÁMICAS */
+  /* =========================
+     CATEGORY
+  ========================= */
   {
     path: 'categoria/:category',
     component: ProductListComponent
   },
 
-  /* DETALLE PRODUCTO */
+  /* =========================
+     PRODUCT DETAIL
+  ========================= */
   {
     path: 'products/:id',
     component: ProductDetailComponent
   },
 
-  /* CARRITO */
+  /* =========================
+     CART
+  ========================= */
   {
     path: 'cart',
     component: Cart
   },
 
-  /* CHECKOUT */
+  /* =========================
+     CHECKOUT
+  ========================= */
   {
     path: 'checkout',
-    component: Checkout
+    component: Checkout,
+
+    /* 🔥 PROTECTED ROUTE */
+    canActivate: [
+      authGuard
+    ]
   },
 
-  /* FAVORITOS */
+  /* =========================
+     FAVORITES
+  ========================= */
   {
     path: 'favorites',
-    component: Favorites
+    component: Favorites,
+
+    /* 🔥 PROTECTED ROUTE */
+    canActivate: [
+      authGuard
+    ]
   },
 
-  /* REDIRECT */
+  /* =========================
+     FALLBACK
+  ========================= */
   {
     path: '**',
     redirectTo: ''

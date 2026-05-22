@@ -3,7 +3,11 @@
   <!-- HERO -->
   <div class="category-hero">
 
-    <img [src]="banner()" [alt]="category()" class="hero-image">
+    <img
+      [src]="banner()"
+      [alt]="category()"
+      class="hero-image"
+    >
 
     <div class="hero-overlay">
 
@@ -25,6 +29,14 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
 
+      <!-- CLEAR FILTERS -->
+      <button
+        class="clear-btn"
+        (click)="clearFilters()"
+      >
+        Limpiar filtros
+      </button>
+
       <!-- COLOR -->
       <div class="filter-block">
 
@@ -32,19 +44,31 @@
 
         <ul>
 
-          <li (click)="filterColor('Blanco')">
+          <li
+            (click)="filterColor('Blanco')"
+            [class.active]="selectedColor() === 'Blanco'"
+          >
             1. Blanco
           </li>
 
-          <li (click)="filterColor('Gris')">
+          <li
+            (click)="filterColor('Gris')"
+            [class.active]="selectedColor() === 'Gris'"
+          >
             2. Gris
           </li>
 
-          <li (click)="filterColor('Café')">
+          <li
+            (click)="filterColor('Café')"
+            [class.active]="selectedColor() === 'Café'"
+          >
             3. Café
           </li>
 
-          <li (click)="filterColor('Azul')">
+          <li
+            (click)="filterColor('Azul')"
+            [class.active]="selectedColor() === 'Azul'"
+          >
             4. Azul
           </li>
 
@@ -59,23 +83,38 @@
 
         <ul>
 
-          <li (click)="filterMaterial('Tela')">
+          <li
+            (click)="filterMaterial('Tela')"
+            [class.active]="selectedMaterial() === 'Tela'"
+          >
             1. Tela
           </li>
 
-          <li (click)="filterMaterial('Madera')">
+          <li
+            (click)="filterMaterial('Madera')"
+            [class.active]="selectedMaterial() === 'Madera'"
+          >
             2. Madera
           </li>
 
-          <li (click)="filterMaterial('Metal')">
+          <li
+            (click)="filterMaterial('Metal')"
+            [class.active]="selectedMaterial() === 'Metal'"
+          >
             3. Metal
           </li>
 
-          <li (click)="filterMaterial('Cristal')">
+          <li
+            (click)="filterMaterial('Cristal')"
+            [class.active]="selectedMaterial() === 'Cristal'"
+          >
             4. Cristal
           </li>
 
-          <li (click)="filterMaterial('Piel')">
+          <li
+            (click)="filterMaterial('Piel')"
+            [class.active]="selectedMaterial() === 'Piel'"
+          >
             5. Piel
           </li>
 
@@ -90,25 +129,38 @@
 
         <div class="sizes">
 
-          <button (click)="filterSize('Individual')">
+          <button
+            (click)="filterSize('Individual')"
+            [class.active]="selectedSize() === 'Individual'"
+          >
             Individual
           </button>
 
-          <button (click)="filterSize('Matrimonial')">
+          <button
+            (click)="filterSize('Matrimonial')"
+            [class.active]="selectedSize() === 'Matrimonial'"
+          >
             Matrimonial
           </button>
 
-          <button (click)="filterSize('Queen Size')">
+          <button
+            (click)="filterSize('Queen Size')"
+            [class.active]="selectedSize() === 'Queen Size'"
+          >
             Queen Size
           </button>
 
-          <button (click)="filterSize('King Size')">
+          <button
+            (click)="filterSize('King Size')"
+            [class.active]="selectedSize() === 'King Size'"
+          >
             King Size
           </button>
 
         </div>
 
       </div>
+
       <!-- PRECIO -->
       <div class="filter-block">
 
@@ -116,27 +168,43 @@
 
         <ul>
 
-          <li (click)="filterPrice('1')">
+          <li
+            (click)="filterPrice('1')"
+            [class.active]="selectedPrice() === '1'"
+          >
             $0.00 - $2,999.99
           </li>
 
-          <li (click)="filterPrice('2')">
+          <li
+            (click)="filterPrice('2')"
+            [class.active]="selectedPrice() === '2'"
+          >
             $3,000.00 - $5,999.99
           </li>
 
-          <li (click)="filterPrice('3')">
+          <li
+            (click)="filterPrice('3')"
+            [class.active]="selectedPrice() === '3'"
+          >
             $6,000.00 - $8,999.99
           </li>
 
-          <li (click)="filterPrice('4')">
+          <li
+            (click)="filterPrice('4')"
+            [class.active]="selectedPrice() === '4'"
+          >
             $9,000.00 - $11,999.99
           </li>
 
-          <li (click)="filterPrice('5')">
+          <li
+            (click)="filterPrice('5')"
+            [class.active]="selectedPrice() === '5'"
+          >
             $12,000.00 y superior
           </li>
 
         </ul>
+
       </div>
 
       <!-- COMPARAR -->
@@ -156,14 +224,15 @@
         <h3>MIS FAVORITOS</h3>
 
         <p>
-          No tienes Artículos agregados en tu lista de Favoritos.
+          No tienes artículos agregados en tu lista
+          de favoritos.
         </p>
 
       </div>
 
     </aside>
 
-    <!-- RIGHT CONTENT -->
+    <!-- PRODUCTS SECTION -->
     <div class="products-section">
 
       <!-- TOP BAR -->
@@ -171,13 +240,28 @@
 
         <div class="sort">
 
-          <span>Ordenar por</span>
+          <span>
+            Ordenar por
+          </span>
 
           <select>
-            <option>Precio - Menor a mayor</option>
-            <option>Precio - Mayor a menor</option>
-            <option>Más vendidos</option>
-            <option>Más recientes</option>
+
+            <option>
+              Precio - Menor a mayor
+            </option>
+
+            <option>
+              Precio - Mayor a menor
+            </option>
+
+            <option>
+              Más vendidos
+            </option>
+
+            <option>
+              Más recientes
+            </option>
+
           </select>
 
         </div>
@@ -188,19 +272,50 @@
 
       </div>
 
-      <!-- PRODUCTS -->
-      <div class="products-grid">
+      <!-- EMPTY STATE -->
+      <div
+        class="empty-products"
+        *ngIf="products().length === 0"
+      >
 
-        <div class="product-card" *ngFor="let product of products()">
+        <h2>
+          No se encontraron productos
+        </h2>
+
+        <p>
+          Intenta cambiar los filtros seleccionados.
+        </p>
+
+        <button
+          class="clear-btn"
+          (click)="clearFilters()"
+        >
+          Limpiar filtros
+        </button>
+
+      </div>
+
+      <!-- PRODUCTS -->
+      <div
+        class="products-grid"
+        *ngIf="products().length > 0"
+      >
+
+        <div
+          class="product-card"
+          *ngFor="let product of products()"
+        >
 
           <!-- IMAGE -->
           <div class="image-container">
 
-            <img [src]="product.image" [alt]="product.title">
+            <img
+              [src]="product.image"
+              [alt]="product.title"
+            >
 
           </div>
 
-          <!-- INFO -->
           <!-- INFO -->
           <div class="product-info">
 
@@ -212,6 +327,24 @@
               {{ product.description }}
             </p>
 
+            <!-- TAGS -->
+            <div class="tags">
+
+              <span *ngIf="product.color">
+                {{ product.color }}
+              </span>
+
+              <span *ngIf="product.material">
+                {{ product.material }}
+              </span>
+
+              <span *ngIf="product.size">
+                {{ product.size }}
+              </span>
+
+            </div>
+
+            <!-- PRICE -->
             <div class="price">
               $ {{ product.price }}
             </div>
@@ -219,14 +352,22 @@
             <!-- ACTIONS -->
             <div class="actions">
 
-
-              <!-- AGREGAR AL CARRITO -->
-              <button class="cart-btn" (click)="addToCart(product)">
+              <!-- CART -->
+              <button
+                class="cart-btn"
+                (click)="addToCart(product)"
+              >
                 Añadir al carrito
               </button>
 
-              <!-- COMPRAR AHORA -->
-              <button class="buy-btn" [routerLink]="['/checkout']" [queryParams]="{ productId: product.id }">
+              <!-- BUY -->
+              <button
+                class="buy-btn"
+                [routerLink]="['/checkout']"
+                [queryParams]="{
+                  productId: product.id
+                }"
+              >
                 Comprar ahora
               </button>
 

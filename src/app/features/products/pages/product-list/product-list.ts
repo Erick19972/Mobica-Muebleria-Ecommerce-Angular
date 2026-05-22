@@ -5,19 +5,22 @@ import {
   signal
 } from '@angular/core';
 
-import { CommonModule }
-from '@angular/common';
+import {
+  CommonModule
+} from '@angular/common';
 
 import {
   ActivatedRoute,
   RouterModule
 } from '@angular/router';
 
-import { ProductService }
-from '../../../../core/services/product';
+import {
+  ProductService
+} from '../../../../core/services/product';
 
-import { CartService }
-from '../../../../core/services/cart';
+import {
+  CartService
+} from '../../../../core/services/cart';
 
 @Component({
   selector: 'app-product-list',
@@ -71,9 +74,6 @@ export class ProductListComponent {
     const currentCategory =
       this.category();
 
-    /* =========================
-       CATEGORY FILTER
-    ========================= */
     let filtered =
       this.productService
         .getProducts()()
@@ -134,7 +134,9 @@ export class ProductListComponent {
       filtered = filtered.filter(product => {
 
         return product.color
-          === this.selectedColor();
+          ?.toLowerCase()
+          === this.selectedColor()
+            ?.toLowerCase();
 
       });
 
@@ -148,7 +150,9 @@ export class ProductListComponent {
       filtered = filtered.filter(product => {
 
         return product.material
-          === this.selectedMaterial();
+          ?.toLowerCase()
+          === this.selectedMaterial()
+            ?.toLowerCase();
 
       });
 
@@ -162,7 +166,9 @@ export class ProductListComponent {
       filtered = filtered.filter(product => {
 
         return product.size
-          === this.selectedSize();
+          ?.toLowerCase()
+          === this.selectedSize()
+            ?.toLowerCase();
 
       });
 
@@ -181,7 +187,7 @@ export class ProductListComponent {
       this.products()[0];
 
     return firstProduct?.banner ||
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85';
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop';
 
   });
 
@@ -206,7 +212,6 @@ export class ProductListComponent {
   ========================= */
   filterPrice(value: string) {
 
-    /* TOGGLE FILTER */
     if (this.selectedPrice() === value) {
 
       this.selectedPrice.set(null);
@@ -267,6 +272,21 @@ export class ProductListComponent {
     }
 
     this.selectedSize.set(size);
+
+  }
+
+  /* =========================
+     CLEAR FILTERS
+  ========================= */
+  clearFilters() {
+
+    this.selectedPrice.set(null);
+
+    this.selectedColor.set(null);
+
+    this.selectedMaterial.set(null);
+
+    this.selectedSize.set(null);
 
   }
 

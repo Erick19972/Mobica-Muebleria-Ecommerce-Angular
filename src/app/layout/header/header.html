@@ -9,16 +9,25 @@
   <div class="header-main">
 
     <!-- SEARCH -->
+    <!-- SEARCH -->
     <div class="search-box">
-      <input type="text" placeholder="BUSCAR" />
-      <span>🔍</span>
+
+      <input type="text" placeholder="BUSCAR" [(ngModel)]="searchTerm" (keyup.enter)="search()" />
+
+      <span (click)="search()">
+
+        🔍
+
+      </span>
+
     </div>
 
     <!-- LOGO -->
-    <!-- LOGO -->
     <a routerLink="/" class="logo">
 
-      <h1>mōbica</h1>
+      <h1>
+        mōbica
+      </h1>
 
       <span>
         ESTA ES MI CASA
@@ -29,17 +38,47 @@
     <!-- ICONS -->
     <div class="icons">
 
-      <span>
+      <!-- LOCATION -->
+      <a routerLink="/tiendas" class="icon-link">
+
         <i class="bi bi-geo-alt"></i>
-      </span>
 
-      <span>
-        <i class="bi bi-person"></i>
-      </span>
+      </a>
 
-      <span>
+      <!-- =========================
+           USER MENU
+      ========================= -->
+      <div class="user-menu">
+
+        <!-- USER ICON -->
+        <div class="user-trigger" (click)="handleUserClick($event)">
+
+          <i class="bi bi-person"></i>
+
+        </div>
+
+        <!-- DROPDOWN -->
+        <div *ngIf="
+            showUserMenu &&
+            authService.isLoggedIn()
+          " class="user-dropdown">
+
+          <button class="logout-btn" (click)="logout()">
+
+            Cerrar sesión
+
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- FAVORITOS -->
+      <a routerLink="/categoria/favoritos" class="icon-link">
+
         <i class="bi bi-heart"></i>
-      </span>
+
+      </a>
 
       <!-- CART -->
       <a routerLink="/cart" class="cart-icon">
@@ -52,29 +91,52 @@
 
   </div>
 
+  <!-- NAVIGATION -->
   <nav class="nav">
 
-    <a routerLink="/categoria/hot-buys">HOT BUYS</a>
+    <a routerLink="/categoria/hot-buys">
+      HOT BUYS
+    </a>
 
-    <a routerLink="/categoria/sala">SALA</a>
+    <a routerLink="/categoria/sala">
+      SALA
+    </a>
 
-    <a routerLink="/categoria/comedor">COMEDOR</a>
+    <a routerLink="/categoria/comedor">
+      COMEDOR
+    </a>
 
-    <a routerLink="/categoria/colchones">COLCHONES</a>
+    <a routerLink="/categoria/colchones">
+      COLCHONES
+    </a>
 
-    <a routerLink="/categoria/recamara">RECÁMARA</a>
+    <a routerLink="/categoria/recamara">
+      RECÁMARA
+    </a>
 
-    <a routerLink="/categoria/oficina">OFICINA</a>
+    <a routerLink="/categoria/oficina">
+      OFICINA
+    </a>
 
-    <a routerLink="/categoria/exterior">EXTERIOR</a>
+    <a routerLink="/categoria/exterior">
+      EXTERIOR
+    </a>
 
-    <a routerLink="/categoria/accesorios">ACCESORIOS</a>
+    <a routerLink="/categoria/accesorios">
+      ACCESORIOS
+    </a>
 
-    <a routerLink="/categoria/small-spaces">SMALL SPACES</a>
+    <a routerLink="/categoria/small-spaces">
+      SMALL SPACES
+    </a>
 
-    <a routerLink="/categoria/business">BUSINESS</a>
+    <a routerLink="/categoria/business">
+      BUSINESS
+    </a>
 
-    <a routerLink="/categoria/disenadores">DISEÑADORES</a>
+    <a routerLink="/categoria/disenadores">
+      DISEÑADORES
+    </a>
 
   </nav>
 

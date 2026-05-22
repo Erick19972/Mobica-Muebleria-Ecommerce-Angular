@@ -842,6 +842,114 @@ export class ProductService {
       size: 'King Size'
     },
 
+    /* =========================
+   FAVORITOS
+========================= */
+    {
+      id: 57,
+      title: 'Sofá Velvet Premium',
+      price: 24999,
+      description: 'Sofá contemporáneo acabado velvet premium',
+      image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop',
+      banner: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop',
+      category: 'FAVORITOS',
+
+      color: 'Gris',
+      material: 'Tela',
+      size: 'King Size'
+    },
+    {
+      id: 58,
+      title: 'Comedor Signature White',
+      price: 32999,
+      description: 'Comedor elegante premium para interiores modernos',
+      image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop',
+      banner: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop',
+      category: 'FAVORITOS',
+
+      color: 'Blanco',
+      material: 'Cristal',
+      size: 'Queen Size'
+    },
+    {
+      id: 59,
+      title: 'Recámara Black Edition',
+      price: 45999,
+      description: 'Recámara moderna premium acabado negro mate',
+      image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop',
+      banner: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop',
+      category: 'FAVORITOS',
+
+      color: 'Negro',
+      material: 'Madera',
+      size: 'King Size'
+    },
+    {
+      id: 60,
+      title: 'Sillón Luxury Nordic',
+      price: 8999,
+      description: 'Sillón minimalista premium estilo nórdico',
+      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop',
+      banner: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop',
+      category: 'FAVORITOS',
+
+      color: 'Azul',
+      material: 'Tela',
+      size: 'Individual'
+    },
+    {
+      id: 61,
+      title: 'Mesa Luxury Marble',
+      price: 18999,
+      description: 'Mesa moderna acabado mármol premium',
+      image: 'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop',
+      banner: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop',
+      category: 'FAVORITOS',
+
+      color: 'Blanco',
+      material: 'Cristal',
+      size: 'Matrimonial'
+    },
+    {
+      id: 62,
+      title: 'Librero Elite Modern',
+      price: 11999,
+      description: 'Librero elegante contemporáneo premium',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
+      banner: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop',
+      category: 'FAVORITOS',
+
+      color: 'Café',
+      material: 'Madera',
+      size: 'Queen Size'
+    },
+    {
+      id: 63,
+      title: 'Cama Premium Soft',
+      price: 27999,
+      description: 'Cama moderna tapizada ultra confort',
+      image: 'https://images.unsplash.com/photo-1505692952047-1a78307da8f2?q=80&w=1200&auto=format&fit=crop',
+      banner: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop',
+      category: 'FAVORITOS',
+
+      color: 'Beige',
+      material: 'Tela',
+      size: 'Queen Size'
+    },
+    {
+      id: 64,
+      title: 'Sala Modular Premium',
+      price: 38999,
+      description: 'Sala modular elegante para interiores exclusivos',
+      image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop',
+      banner: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop',
+      category: 'FAVORITOS',
+
+      color: 'Gris',
+      material: 'Tela',
+      size: 'King Size'
+    },
+
   ]);
 
   getProducts() {
